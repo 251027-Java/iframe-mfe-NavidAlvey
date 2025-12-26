@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MFE Shell</title>
+    <style>
+        body { display: flex; flex-direction: column; height: 100vh; margin: 0; }
+        header { background: #333; color: white; padding: 1rem; }
+        .container { display: flex; flex: 1; }
+        aside { width: 200px; background: #eee; padding: 1rem; }
+        main { flex: 1; padding: 1rem; }
+        iframe { width: 100%; height: 100%; border: none; }
+    </style>
+</head>
+<body>
+    <header>Micro-Frontend Shell</header>
+    <div class="container">
+        <aside>
+            <button onclick="loadApp('app1.html')">Load App 1</button>
+            <button onclick="loadApp('app2.html')">Load App 2</button>
+        </aside>
+        <main>
+            <iframe id="content-frame" src=""></iframe>
+        </main>
+    </div>
+    
+    <script>
+        function loadApp(url) {
+            document.getElementById('content-frame').src = url;
+        }
+        
+        // TODO: Add listener for postMessage
+    </script>
+</body>
+</html>
