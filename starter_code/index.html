@@ -30,6 +30,12 @@
         }
         
         // TODO: Add listener for postMessage
+        window.addEventListener('message', (event) => {
+            if (event.data?.type === 'CHANGE_SHELL_COLOR') {
+                document.body.style.backgroundColor = event.data.color;
+            }
+        });
+
     </script>
 </body>
 </html>

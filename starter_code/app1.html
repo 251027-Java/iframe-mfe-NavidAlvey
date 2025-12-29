@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>App 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h2>App 1</h2>
+    <p>Navid Alvey</p>
+
+    <button onclick="changeShellColor()">Change Shell Color</button>
+
+    <script>
+        function changeShellColor() {
+            window.parent.postMessage(
+                {
+                    type: 'CHANGE_SHELL_COLOR',
+                    color: '#d1e7ff'
+                },
+                '*'
+            );
+        }
+    </script>
+</body>
+</html>
